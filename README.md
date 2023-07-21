@@ -8,10 +8,11 @@
 sudo apt install guix
 ```
 
-### Setup own channel
+### Setup for reproducible research
 
-https://guix.gnu.org/manual/en/html_node/Channels.html
-https://peterloleungyau.github.io/post/more_guix_private_channel/
+- https://guix.gnu.org/manual/en/html_node/Channels.html
+- https://peterloleungyau.github.io/post/more_guix_private_channel/
+- https://hpc.guix.info/blog/2022/12/cran-a-practical-example-for-being-reproducible-at-large-scale-using-gnu-guix/
 
 #### Importing non-existing R packages
 
