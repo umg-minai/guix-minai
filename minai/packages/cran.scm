@@ -220,3 +220,26 @@ automatically identified and the tables are pre-filled with appropriate column
 headers.")
     (license expat)))
 
+(define-public r-consort
+  (package
+    (name "r-consort")
+    (version "1.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "consort" version))
+              (sha256
+               (base32
+                "1jshk53121w58i4if593qzxm6lcrrggz8parwhqvv6hnbx51rhck"))))
+    (properties `((upstream-name . "consort")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/adayim/consort/")
+    (synopsis "Create Consort Diagram")
+    (description
+     "To make it easy to create CONSORT diagrams for the transparent reporting of
+participant allocation in randomized, controlled clinical trials.  This is done
+by creating a standardized disposition data, and using this data as the source
+for the creation a standard CONSORT diagram.  Human effort by supplying text
+labels on the node can also be achieved.")
+    (license expat)))
+
