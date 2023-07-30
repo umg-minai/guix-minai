@@ -243,3 +243,65 @@ for the creation a standard CONSORT diagram.  Human effort by supplying text
 labels on the node can also be achieved.")
     (license expat)))
 
+(define-public r-diagrammer
+  (package
+    (name "r-diagrammer")
+    (version "1.0.10")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "DiagrammeR" version))
+              (sha256
+               (base32
+                "147q7zgwhd7vc0l134sqkkf6n6s6bznxvcmsrdx2f5df12bsixkj"))))
+    (properties `((upstream-name . "DiagrammeR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-downloader
+                             r-dplyr
+                             r-glue
+                             r-htmltools
+                             r-htmlwidgets
+                             r-igraph
+                             r-magrittr
+                             r-purrr
+                             r-rcolorbrewer
+                             r-readr
+                             r-rlang
+                             r-rstudioapi
+                             r-scales
+                             r-stringr
+                             r-tibble
+                             r-tidyr
+                             r-viridis
+                             r-visnetwork))
+    (native-inputs (list esbuild))
+    (home-page "https://github.com/rich-iannone/DiagrammeR")
+    (synopsis "Graph/Network Visualization")
+    (description
+     "Build graph/network structures using functions for stepwise addition and
+deletion of nodes and edges.  Work with data available in tables for bulk
+addition of nodes, edges, and associated metadata.  Use graph selections and
+traversals to apply changes to specific nodes or edges.  A wide selection of
+graph algorithms allow for the analysis of graphs.  Visualize the graphs and
+take advantage of any aesthetic properties assigned to nodes and edges.")
+    (license expat)))
+
+(define-public r-diagrammersvg
+  (package
+    (name "r-diagrammersvg")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "DiagrammeRsvg" version))
+              (sha256
+               (base32
+                "0j2cm1mx3zrb2k3pcrb96z2z3kws61gyyjsjjv5rqcb5lzdgi65k"))))
+    (properties `((upstream-name . "DiagrammeRsvg")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-v8))
+    (native-inputs (list esbuild))
+    (home-page "https://github.com/rich-iannone/DiagrammeRsvg")
+    (synopsis "Export DiagrammeR Graphviz Graphs as SVG")
+    (description
+     "Allows for export of @code{DiagrammeR} Graphviz objects to SVG.")
+    (license expat)))
+
