@@ -282,3 +282,56 @@ take advantage of any aesthetic properties assigned to nodes and edges.")
      "Allows for export of @code{DiagrammeR} Graphviz objects to SVG.")
     (license expat)))
 
+(define-public r-settings
+  (package
+    (name "r-settings")
+    (version "0.2.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "settings" version))
+       (sha256
+        (base32 "1i9ij5k8p2v9gxr48vas8hj337mbyx9c4ywv9bbdwkz6kzah46k5"))))
+    (properties `((upstream-name . "settings")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/markvanderloo/settings")
+    (synopsis "Software Option Settings Manager for R")
+    (description
+     "This package provides option settings management that goes beyond R's default
+options function.  With this package, users can define their own option settings
+manager holding option names, default values and (if so desired) ranges or sets
+of allowed option values that will be automatically checked.  Settings can then
+be retrieved, altered and reset to defaults with ease.  For R programmers and
+package developers it offers cloning and merging functionality which allows for
+conveniently defining global and local options, possibly in a multilevel options
+hierarchy.  See the package vignette for some examples concerning functions, S4
+classes, and reference classes.  There are convenience functions to reset par()
+and options() to their factory defaults'.")
+    (license gpl3)))
+
+(define-public r-validate
+  (package
+    (name "r-validate")
+    (version "1.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "validate" version))
+       (sha256
+        (base32 "0c7f33cm6v0rngbpgdkkqzjf3v024lzk6fjn6xd5sbnlbfrrkiqz"))))
+    (properties `((upstream-name . "validate")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-settings r-yaml))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/data-cleaning/validate")
+    (synopsis "Data Validation Infrastructure")
+    (description
+     "Declare data validation rules and data quality indicators; confront data with
+them and analyze or visualize the results.  The package supports rules that are
+per-field, in-record, cross-record or cross-dataset.  Rules can be automatically
+analyzed for rule type and connectivity.  Supports checks implied by an SDMX DSD
+file as well.  See also Van der Loo and De Jonge (2018)
+<doi:10.1002/9781118897126>, Chapter 6 and the JSS paper (2021)
+<doi:10.18637/jss.v097.i10>.")
+    (license gpl3)))
