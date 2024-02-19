@@ -223,16 +223,16 @@ headers.")
 (define-public r-diagrammer
   (package
     (name "r-diagrammer")
-    (version "1.0.10")
+    (version "1.0.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DiagrammeR" version))
               (sha256
                (base32
-                "147q7zgwhd7vc0l134sqkkf6n6s6bznxvcmsrdx2f5df12bsixkj"))))
+                "1py4yii88lsyj8y71d2v0rb9lk5hvhfh0q8n2q4288wqw7bf6wz8"))))
     (properties `((upstream-name . "DiagrammeR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-downloader
+    (propagated-inputs (list r-cli
                              r-dplyr
                              r-glue
                              r-htmltools
@@ -248,7 +248,7 @@ headers.")
                              r-stringr
                              r-tibble
                              r-tidyr
-                             r-viridis
+                             r-viridislite
                              r-visnetwork))
     (native-inputs (list esbuild))
     (home-page "https://github.com/rich-iannone/DiagrammeR")
