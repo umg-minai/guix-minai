@@ -107,13 +107,13 @@ varying specificity.")
 (define-public r-gt
   (package
     (name "r-gt")
-    (version "0.9.0")
+    (version "0.10.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gt" version))
               (sha256
                (base32
-                "0l60f38r7wnd2dh4c5il9axabxzqd0zdzlhkp1cibdp14zi7xr9y"))))
+                "11rkrkj9ic8wl0jbzigyrsb31crqbz1gpmb9qmavg424vpi60ry5"))))
     (properties `((upstream-name . "gt")))
     (build-system r-build-system)
     (propagated-inputs (list r-base64enc
@@ -133,8 +133,8 @@ varying specificity.")
                              r-rlang
                              r-sass
                              r-scales
-                             r-tibble
                              r-tidyselect
+                             r-vctrs
                              r-xml2))
     (home-page "https://gt.rstudio.com/")
     (synopsis "Easily Create Presentation-Ready Display Tables")
