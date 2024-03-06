@@ -335,3 +335,35 @@ file as well.  See also Van der Loo and De Jonge (2018)
 <doi:10.1002/9781118897126>, Chapter 6 and the JSS paper (2021)
 <doi:10.18637/jss.v097.i10>.")
     (license gpl3)))
+
+(define-public r-ameld
+  (let ((commit "ac7414b87524dd76ffbb0d5c6b8947a224926528")
+        (revision "1"))
+    (package
+      (name "r-ameld")
+      (version (git-version "0.0.31" revision commit))
+      (source
+       (origin
+         (method git-fetch)
+         (uri (git-reference
+               (url "https://github.com/ampel-leipzig/ameld")
+               (commit commit)))
+         (file-name (git-file-name name version))
+         (sha256
+          (base32 "1bh4fp0k9qqml33g664dx22xagdfdb2bcvfvajwyb2s3fs1cgrl0"))))
+      (properties `((upstream-name . "ameld")))
+      (build-system r-build-system)
+      (propagated-inputs (list r-glmnet r-survival))
+      (native-inputs (list r-knitr))
+      (home-page "https://github.com/ampel-leipzig/ameld")
+      (synopsis
+       "Data and Model of End-Stage Liver Disease used in the AMPEL Project")
+      (description
+       "This package provides a dataset of patients evaluated for liver transplantation
+at the University Hospital Leipzig from November 2012 to June 2015.  Additional
+the model used to predict survival in patients with end-stage liver disease in
+the AMPEL (Analysis and Reporting System for the Improvement of Patient Safety
+through Real-Time Integration of Laboratory Findings, \\url{https://ampel.care})
+is provided.")
+      (license gpl3+))))
+
