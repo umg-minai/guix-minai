@@ -41,7 +41,7 @@ guix describe --format=channels > channels.scm
 git clone https://github.com/umg-minai/guix-minai.git
 cd guix-minai
 git fetch origin keyring:keyring
-guix git authenticate a1802683d6547403f0b292075199c0b168625323 \
+guix git authenticate 4e47c0f12cf838335bf731b1947ea434923569e3 \
   "22C0 E8AC A81A 3A13 C788  BCC4 ECAA 2C0A 2843 245B"
 ```
 
