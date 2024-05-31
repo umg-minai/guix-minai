@@ -34,3 +34,15 @@ guix refresh --load-path=minai --update $(grep define-public minai/packages/*.sc
 ```
 guix describe --format=channels > channels.scm
 ```
+
+### Authenticate channel
+
+```
+git clone https://github.com/umg-minai/guix-minai.git
+cd guix-minai
+git fetch origin keyring:keyring
+guix git authenticate a1802683d6547403f0b292075199c0b168625323 \
+  "22C0 E8AC A81A 3A13 C788  BCC4 ECAA 2C0A 2843 245B"
+```
+
+Details could be found at https://guix.gnu.org/en/blog/2024/authenticate-your-git-checkouts/
