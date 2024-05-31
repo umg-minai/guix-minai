@@ -42,7 +42,7 @@ git clone https://github.com/umg-minai/guix-minai.git
 cd guix-minai
 git fetch origin keyring:keyring
 guix git authenticate 4e47c0f12cf838335bf731b1947ea434923569e3 \
-  "22C0 E8AC A81A 3A13 C788  BCC4 ECAA 2C0A 2843 245B"
+  "7EAB 7082 91D9 28E5 4387  47A7 F9F3 CB1B 50FB 607A"
 ```
 
 Details could be found at https://guix.gnu.org/en/blog/2024/authenticate-your-git-checkouts/
