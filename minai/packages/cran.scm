@@ -147,38 +147,6 @@ a location targeting system.  The way in which gt handles things for you means
 that you don't often have to worry about the fine details.")
     (license expat)))
 
-(define-public r-broom-helpers
-  (package
-    (name "r-broom-helpers")
-    (version "1.13.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "broom.helpers" version))
-              (sha256
-               (base32
-                "0k3bd9f42dzp7xjqn43yfwajxzzm2h6f66npp9wjyx750jkaf1q1"))))
-    (properties `((upstream-name . "broom.helpers")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-broom
-                             r-cli
-                             r-dplyr
-                             r-labelled
-                             r-lifecycle
-                             r-purrr
-                             r-rlang
-                             r-stringr
-                             r-tibble
-                             r-tidyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://larmarange.github.io/broom.helpers/")
-    (synopsis "Helpers for Model Coefficients Tibbles")
-    (description
-     "This package provides suite of functions to work with regression model
-broom::tidy() tibbles.  The suite includes functions to group regression model
-terms by variable, insert reference and header rows for categorical variables,
-add variable labels, and more.")
-    (license gpl3+)))
-
 (define-public r-gtsummary
   (package
     (name "r-gtsummary")
