@@ -336,11 +336,11 @@ is provided.")
       (license gpl3+))))
 
 (define-public r-dltr
-  (let ((commit "a50799870c30f1f50328b74411949a3208b9c021")
+  (let ((commit "710b7bf4a88434c2aaf6a7603cdb64613c9e0f74")
         (revision "1"))
     (package
       (name "r-dltr")
-      (version (git-version "0.0.1.9000" revision commit))
+      (version (git-version "0.0.2.9000" revision commit))
       (source
        (origin
          (method git-fetch)
@@ -349,7 +349,7 @@ is provided.")
                (commit commit)))
          (file-name (git-file-name name version))
          (sha256
-          (base32 "0pjqdj3ih9532iwpny9ca4c1h1m37039jvlr4i6szj0jq0hjvabp"))))
+          (base32 "1scj2qmbxbhz87nqx8m3q73a7w4gr6zdsq4smis8z84vwbmgj7bg"))))
       (properties `((upstream-name . "dltr")))
       (build-system r-build-system)
       (propagated-inputs (list r-data-table r-lubridate))
@@ -359,3 +359,4 @@ is provided.")
        "This package provides a reader for logbook and trend data exported from Draeger
 anaesthesia machines.")
       (license gpl3+))))
+
