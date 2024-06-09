@@ -335,3 +335,27 @@ through Real-Time Integration of Laboratory Findings, \\url{https://ampel.care})
 is provided.")
       (license gpl3+))))
 
+(define-public r-dltr
+  (let ((commit "a50799870c30f1f50328b74411949a3208b9c021")
+        (revision "1"))
+    (package
+      (name "r-dltr")
+      (version (git-version "0.0.1.9000" revision commit))
+      (source
+       (origin
+         (method git-fetch)
+         (uri (git-reference
+               (url "https://github.com/umg-minai/dltr")
+               (commit commit)))
+         (file-name (git-file-name name version))
+         (sha256
+          (base32 "0pjqdj3ih9532iwpny9ca4c1h1m37039jvlr4i6szj0jq0hjvabp"))))
+      (properties `((upstream-name . "dltr")))
+      (build-system r-build-system)
+      (propagated-inputs (list r-data-table r-lubridate))
+      (home-page "https://github.com/umg-minai/dltr")
+      (synopsis "Draeger logbook and trend reader")
+      (description
+       "This package provides a reader for logbook and trend data exported from Draeger
+anaesthesia machines.")
+      (license gpl3+))))
