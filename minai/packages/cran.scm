@@ -31,13 +31,13 @@ file of randomization cards.")
 (define-public r-reactr
   (package
     (name "r-reactr")
-    (version "0.5.0")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "reactR" version))
               (sha256
                (base32
-                "14pi2wc25qa9q0hp8jby07798l53phyj1zifj46fg2pjq8vkz7p7"))))
+                "0mi9zfy50njvykmp4rfgpvsmf7q8l92n2196jw9sc06q7ybjn92v"))))
     (properties `((upstream-name . "reactR")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmltools))
@@ -126,13 +126,13 @@ varying specificity.")
 (define-public r-gt
   (package
     (name "r-gt")
-    (version "0.10.1")
+    (version "0.11.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gt" version))
               (sha256
                (base32
-                "11rkrkj9ic8wl0jbzigyrsb31crqbz1gpmb9qmavg424vpi60ry5"))))
+                "1jg9kg2b1qig1awfgnb5fi54qjmvl2qw1ny0l4vsqh87c2f3yij3"))))
     (properties `((upstream-name . "gt")))
     (build-system r-build-system)
     (propagated-inputs (list r-base64enc
@@ -378,4 +378,3 @@ is provided.")
        "This package provides a reader for logbook and trend data exported from Draeger
 anaesthesia machines.")
       (license gpl3+))))
-
