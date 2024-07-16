@@ -9,6 +9,25 @@
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages web))
 
+(define-public r-blockrand
+  (package
+    (name "r-blockrand")
+    (version "1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "blockrand" version))
+       (sha256
+        (base32 "0bic3b8l7mp2hpwd8k1diwy6a4lj92i7s5k20i2wy8kw0c74jwfh"))))
+    (properties `((upstream-name . "blockrand")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=blockrand")
+    (synopsis "Randomization for Block Random Clinical Trials")
+    (description
+     "Create randomizations for block random clinical trials.  Can also produce a pdf
+file of randomization cards.")
+    (license gpl2)))
+
 (define-public r-reactr
   (package
     (name "r-reactr")
