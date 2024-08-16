@@ -201,6 +201,34 @@ automatically identified and the tables are pre-filled with appropriate column
 headers.")
     (license expat)))
 
+(define-public r-cards
+  (package
+    (name "r-cards")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cards" version))
+       (sha256
+        (base32 "0vadra5d9bbair6z5qfj77y4h6qa6gzk929mj8xq41iyv5nkpp6i"))))
+    (properties `((upstream-name . "cards")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-cli
+                             r-dplyr
+                             r-glue
+                             r-rlang
+                             r-tidyr
+                             r-tidyselect))
+    (home-page "https://github.com/insightsengineering/cards")
+    (synopsis "Analysis Results Data")
+    (description
+     "Construct CDISC (Clinical Data Interchange Standards Consortium) compliant
+Analysis Results Data objects.  These objects are used and re-used to construct
+summary tables, visualizations, and written reports.  The package also exports
+utilities for working with these objects and creating new Analysis Results Data
+objects.")
+    (license asl2.0)))
+
 (define-public r-diagrammer
   (package
     (name "r-diagrammer")
