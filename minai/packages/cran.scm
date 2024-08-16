@@ -378,3 +378,28 @@ is provided.")
        "This package provides a reader for logbook and trend data exported from Draeger
 anaesthesia machines.")
       (license gpl3+))))
+
+(define-public r-minair
+  (let ((commit "07f0eaf97deead3d235f4b55637f5bef8e963938")
+        (revision "1"))
+    (package
+      (name "r-minair")
+      (version (git-version "0.0.0" revision commit))
+      (source
+       (origin
+         (method git-fetch)
+         (uri (git-reference
+               (url "https://github.com/umg-minai/minair")
+               (commit commit)))
+         (file-name (git-file-name name version))
+         (sha256
+          (base32 "1pan7d2k76drsnqpm66vjdsm4g5bw6kq5f18bf2y3r5m0p01937v"))))
+      (properties `((upstream-name . "minair")))
+      (build-system r-build-system)
+      (propagated-inputs (list r-rprojroot))
+      (home-page "https://github.com/umg-minai/minair")
+      (synopsis "minai r utils")
+      (description
+       "R utilities and functions used in the Medizinische Informatik working group at
+the Klinik für Anästhesie, Universitätsmedizin Greifswald.")
+      (license gpl3+))))
