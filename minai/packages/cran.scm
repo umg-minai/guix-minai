@@ -169,28 +169,22 @@ that you don't often have to worry about the fine details.")
 (define-public r-gtsummary
   (package
     (name "r-gtsummary")
-    (version "1.7.2")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gtsummary" version))
               (sha256
                (base32
-                "02jbsdv8wwncnrmqmf12pz3ld759s8ll5dl5rrxv8ad6qgqjbhnx"))))
+                "0xg3lvnl822vwrd8rr31vmv1lp9yg2i2p9l8fa77l07nkvalvg32"))))
     (properties `((upstream-name . "gtsummary")))
     (build-system r-build-system)
-    (propagated-inputs (list r-broom
-                             r-broom-helpers
+    (propagated-inputs (list r-cards
                              r-cli
                              r-dplyr
-                             r-forcats
                              r-glue
                              r-gt
-                             r-knitr
                              r-lifecycle
-                             r-purrr
                              r-rlang
-                             r-stringr
-                             r-tibble
                              r-tidyr
                              r-vctrs))
     (native-inputs (list r-knitr))
