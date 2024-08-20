@@ -169,13 +169,13 @@ that you don't often have to worry about the fine details.")
 (define-public r-gtsummary
   (package
     (name "r-gtsummary")
-    (version "2.0.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gtsummary" version))
               (sha256
                (base32
-                "0xg3lvnl822vwrd8rr31vmv1lp9yg2i2p9l8fa77l07nkvalvg32"))))
+                "13p3ii63whd0vgx5lnvdaqhmi6if492r9x2v769vnck2dzpsrjbp"))))
     (properties `((upstream-name . "gtsummary")))
     (build-system r-build-system)
     (propagated-inputs (list r-cards
@@ -204,13 +204,13 @@ headers.")
 (define-public r-cards
   (package
     (name "r-cards")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cards" version))
        (sha256
-        (base32 "0vadra5d9bbair6z5qfj77y4h6qa6gzk929mj8xq41iyv5nkpp6i"))))
+        (base32 "1hikcd696f6i74nlqgkfi7nip99xw25pkqxxn78c5bawmxxfq15v"))))
     (properties `((upstream-name . "cards")))
     (build-system r-build-system)
     (propagated-inputs (list r-cli
@@ -346,11 +346,11 @@ file as well.  See also Van der Loo and De Jonge (2018)
     (license gpl3)))
 
 (define-public r-ameld
-  (let ((commit "ac7414b87524dd76ffbb0d5c6b8947a224926528")
+  (let ((commit "e12cd00f48f2763b06959c44ddf78394bf3fca06")
         (revision "1"))
     (package
       (name "r-ameld")
-      (version (git-version "0.0.31" revision commit))
+      (version (git-version "0.0.32" revision commit))
       (source
        (origin
          (method git-fetch)
@@ -359,7 +359,7 @@ file as well.  See also Van der Loo and De Jonge (2018)
                (commit commit)))
          (file-name (git-file-name name version))
          (sha256
-          (base32 "1bh4fp0k9qqml33g664dx22xagdfdb2bcvfvajwyb2s3fs1cgrl0"))))
+          (base32 "0rpn8w9gg1ky6ir19hprsvxl2c9dl42582zpbh963jbvfk80pyfq"))))
       (properties `((upstream-name . "ameld")))
       (build-system r-build-system)
       (propagated-inputs (list r-glmnet r-survival))
