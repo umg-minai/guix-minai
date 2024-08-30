@@ -402,11 +402,11 @@ anaesthesia machines.")
       (license gpl3+))))
 
 (define-public r-minair
-  (let ((commit "96644fd57e6ffb4b920da7ae130b478b21ddd8eb")
+  (let ((commit "aeeffd46cbf11bd685b41ceb8c957a7aa983260f")
         (revision "1"))
     (package
       (name "r-minair")
-      (version (git-version "0.0.2" revision commit))
+      (version (git-version "0.0.4" revision commit))
       (source
        (origin
          (method git-fetch)
@@ -415,7 +415,7 @@ anaesthesia machines.")
                (commit commit)))
          (file-name (git-file-name name version))
          (sha256
-          (base32 "099zwps29k93g58vx9z9k4vmmf3jck0fvvz18frvh8b11qif7l2r"))))
+          (base32 "1m9rl591abj14gg35x04r66c7gjw668ggrv4xnc10sx56g2bxgwi"))))
       (properties `((upstream-name . "minair")))
       (build-system r-build-system)
       (propagated-inputs (list r-rprojroot))
