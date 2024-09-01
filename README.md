@@ -26,7 +26,7 @@ guix import cran --recursive --archive=git URL >> minai/packages/cran.scm
 #### Upgrade packages
 
 ```
-guix refresh --load-path=. --update $(grep define-public minai/packages/*.scm | cut -f 2 -d ' ')
+guix refresh --load-path=. --update --select="module:(minai packages cran)"
 ```
 
 ### Save channels
