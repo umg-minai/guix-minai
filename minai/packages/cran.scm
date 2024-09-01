@@ -402,7 +402,7 @@ anaesthesia machines.")
 (define-public r-minair
     (package
       (name "r-minair")
-      (version "0.0.4")
+      (version "0.0.5")
       (source
        (origin
          (method git-fetch)
@@ -411,7 +411,7 @@ anaesthesia machines.")
                (commit version)))
          (file-name (git-file-name name version))
          (sha256
-          (base32 "1m9rl591abj14gg35x04r66c7gjw668ggrv4xnc10sx56g2bxgwi"))))
+          (base32 "0xy6p5m1rb1kaqj0kiib2znlpqsx4rj3fx32lphvxssjym794by7"))))
       (properties `((upstream-name . "minair")))
       (build-system r-build-system)
       (propagated-inputs (list r-rprojroot))
