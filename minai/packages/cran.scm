@@ -377,17 +377,15 @@ is provided.")
       (license gpl3+))))
 
 (define-public r-dltr
-  (let ((commit "c73a3ddfbb03421551c86b40d009cf2754ae8fb2")
-        (revision "1"))
     (package
       (name "r-dltr")
-      (version (git-version "0.0.3" revision commit))
+      (version "0.0.3")
       (source
        (origin
          (method git-fetch)
          (uri (git-reference
                (url "https://github.com/umg-minai/dltr")
-               (commit commit)))
+               (commit version)))
          (file-name (git-file-name name version))
          (sha256
           (base32 "1znfxi6aqjcm8mmys9ykf3ssp4jrpc27si0d6nc7w9wl4g6ik1mz"))))
@@ -399,20 +397,18 @@ is provided.")
       (description
        "This package provides a reader for logbook and trend data exported from Draeger
 anaesthesia machines.")
-      (license gpl3+))))
+      (license gpl3+)))
 
 (define-public r-minair
-  (let ((commit "aeeffd46cbf11bd685b41ceb8c957a7aa983260f")
-        (revision "1"))
     (package
       (name "r-minair")
-      (version (git-version "0.0.4" revision commit))
+      (version "0.0.4")
       (source
        (origin
          (method git-fetch)
          (uri (git-reference
                (url "https://github.com/umg-minai/minair")
-               (commit commit)))
+               (commit version)))
          (file-name (git-file-name name version))
          (sha256
           (base32 "1m9rl591abj14gg35x04r66c7gjw668ggrv4xnc10sx56g2bxgwi"))))
@@ -424,4 +420,4 @@ anaesthesia machines.")
       (description
        "R utilities and functions used in the Medizinische Informatik working group at
 the Klinik für Anästhesie, Universitätsmedizin Greifswald.")
-      (license gpl3+))))
+      (license gpl3+)))
