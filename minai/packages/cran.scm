@@ -181,7 +181,7 @@ that you don't often have to worry about the fine details.")
     (propagated-inputs (list r-cards
                              r-cli
                              r-dplyr
-                             r-glue
+                             r-glue.1.8
                              r-gt
                              r-lifecycle
                              r-rlang
@@ -447,3 +447,14 @@ the Klinik für Anästhesie, Universitätsmedizin Greifswald.")
 cross-validation confidence intervals for prediction error.")
       (license expat))))
 
+(define-public r-glue.1.8
+  (package
+    (inherit r-glue)
+    (name "r-glue.1.8")
+    (version "1.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "glue" version))
+       (sha256
+        (base32 "183j9gpffmi30lfifl8d9sq1l25f8dgsgqd3blpndf4rm15kcvy8"))))))
