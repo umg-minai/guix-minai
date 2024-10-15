@@ -426,7 +426,7 @@ the Klinik für Anästhesie, Universitätsmedizin Greifswald.")
   (let ((commit "7f9d5ae46f941dbff11d7aa74b68f88f9be3eb20")
         (revision "1"))
     (package
-      (name "r-nestedcv")
+      (name "r-nestedcv-bates")
       (version (git-version "0.1.0" revision commit))
       (source
        (origin
