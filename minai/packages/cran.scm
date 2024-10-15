@@ -31,13 +31,13 @@ file of randomization cards.")
 (define-public r-reactr
   (package
     (name "r-reactr")
-    (version "0.6.0")
+    (version "0.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "reactR" version))
               (sha256
                (base32
-                "0mi9zfy50njvykmp4rfgpvsmf7q8l92n2196jw9sc06q7ybjn92v"))))
+                "14nqaxgfnqrwl67b705jna8vljhx9xlakvkdl76bwk759myhsscv"))))
     (properties `((upstream-name . "reactR")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmltools))
@@ -126,13 +126,13 @@ varying specificity.")
 (define-public r-gt
   (package
     (name "r-gt")
-    (version "0.11.0")
+    (version "0.11.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gt" version))
               (sha256
                (base32
-                "1jg9kg2b1qig1awfgnb5fi54qjmvl2qw1ny0l4vsqh87c2f3yij3"))))
+                "0njzpj57afvbi7jsbpb0j1mgm1nz01bd25668gsmvpd7lajm7ig0"))))
     (properties `((upstream-name . "gt")))
     (build-system r-build-system)
     (propagated-inputs (list r-base64enc
@@ -169,13 +169,13 @@ that you don't often have to worry about the fine details.")
 (define-public r-gtsummary
   (package
     (name "r-gtsummary")
-    (version "2.0.1")
+    (version "2.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gtsummary" version))
               (sha256
                (base32
-                "13p3ii63whd0vgx5lnvdaqhmi6if492r9x2v769vnck2dzpsrjbp"))))
+                "1ihbh5gm029n7g8041l7wrsd1wph7cl4hvx3bmd9669lv9w8476d"))))
     (properties `((upstream-name . "gtsummary")))
     (build-system r-build-system)
     (propagated-inputs (list r-cards
@@ -204,13 +204,13 @@ headers.")
 (define-public r-cards
   (package
     (name "r-cards")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cards" version))
        (sha256
-        (base32 "1hikcd696f6i74nlqgkfi7nip99xw25pkqxxn78c5bawmxxfq15v"))))
+        (base32 "1rwa0xh5inyyk1j21d69nasjzyx6rrck9zc194j1xm77zj6z77v7"))))
     (properties `((upstream-name . "cards")))
     (build-system r-build-system)
     (propagated-inputs (list r-cli
