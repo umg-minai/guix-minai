@@ -421,3 +421,29 @@ anaesthesia machines.")
        "R utilities and functions used in the Medizinische Informatik working group at
 the Klinik für Anästhesie, Universitätsmedizin Greifswald.")
       (license gpl3+)))
+
+(define-public r-nestedcv-bates
+  (let ((commit "7f9d5ae46f941dbff11d7aa74b68f88f9be3eb20")
+        (revision "1"))
+    (package
+      (name "r-nestedcv")
+      (version (git-version "0.1.0" revision commit))
+      (source
+       (origin
+         (method git-fetch)
+         (uri (git-reference
+               (url "https://github.com/stephenbates19/nestedcv.git")
+               (commit commit)))
+         (file-name (git-file-name name version))
+         (sha256
+          (base32 "0q4jji77xm00nq0pqxcl5a7w4k3p89s6sk6l7z87izradx7a32hm"))))
+      (properties `((upstream-name . "nestedcv")))
+      (build-system r-build-system)
+      (native-inputs (list r-knitr))
+      (home-page "https://github.com/stephenbates19/nestedcv.git")
+      (synopsis "Nested Cross-Validation")
+      (description
+       "This package implements nested cross-validation to return adjusted
+cross-validation confidence intervals for prediction error.")
+      (license expat))))
+
