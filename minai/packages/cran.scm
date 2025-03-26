@@ -230,7 +230,7 @@ headers.")
         (base32 "0jq044skp09sppvyyhpc38qswrcdh9sf3j3yp2lgdsziz4gfjvxf"))))
     (properties `((upstream-name . "cards")))
     (build-system r-build-system)
-    (native-inputs (list r-cardx r-testthat r-withr))
+    (native-inputs (list r-testthat r-withr))
     (propagated-inputs (list r-cli
                              r-dplyr
                              r-glue
