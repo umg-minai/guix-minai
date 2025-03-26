@@ -193,7 +193,7 @@ that you don't often have to worry about the fine details.")
                          r-cardx
                          r-flextable
                          r-geepack
-                         r-helpers
+                         r-broom-helpers
                          r-knitr
                          r-lme4
                          r-mice
