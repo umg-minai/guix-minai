@@ -478,3 +478,147 @@ cross-validation confidence intervals for prediction error.")
        (uri (cran-uri "glue" version))
        (sha256
         (base32 "183j9gpffmi30lfifl8d9sq1l25f8dgsgqd3blpndf4rm15kcvy8"))))))
+
+(define-public r-tableone
+  (package
+    (name "r-tableone")
+    (version "0.13.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tableone" version))
+       (sha256
+        (base32 "1br78y68037g5v5jhgi9l393kj2msamdklim8ki40hmxk9bibkxi"))))
+    (properties `((upstream-name . "tableone")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-e1071
+                             r-gmodels
+                             r-labelled
+                             r-mass
+                             r-nlme
+                             r-survey
+                             r-zoo))
+    (native-inputs (list r-geepack
+                         r-knitr
+                         r-lme4
+                         r-lmertest
+                         r-matrix
+                         r-survival
+                         r-testthat))
+    (home-page "https://github.com/kaz-yos/tableone")
+    (synopsis
+     "Create 'Table 1' to Describe Baseline Characteristics with or without Propensity Score Weights")
+    (description
+     "This package creates Table 1', i.e., description of baseline patient
+characteristics, which is essential in every medical research.  Supports both
+continuous and categorical variables, as well as p-values and standardized mean
+differences.  Weighted data are supported via the survey package.")
+    (license gpl2)))
+
+(define-public r-stddiff
+  (package
+    (name "r-stddiff")
+    (version "3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "stddiff" version))
+       (sha256
+        (base32 "1lirfxqiq59vhjkq1zv27ycybbs9n62c14klkkcf74j15a54cmbn"))))
+    (properties `((upstream-name . "stddiff")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=stddiff")
+    (synopsis
+     "Calculate the Standardized Difference for Numeric, Binary and Category Variables")
+    (description
+     "This package contains three main functions including @code{stddiff.numeric()},
+@code{stddiff.binary()} and @code{stddiff.category()}.  These are used to
+calculate the standardized difference between two groups.  It is especially used
+to evaluate the balance between two groups before and after propensity score
+matching.")
+    (license gpl3)))
+
+(define-public r-smd
+  (package
+    (name "r-smd")
+    (version "0.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "smd" version))
+       (sha256
+        (base32 "1f5pph3728jb15bmyv0xdanww490gjm5ixz9dbvdv27av02p12js"))))
+    (properties `((upstream-name . "smd")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass))
+    (native-inputs (list r-knitr r-purrr r-stddiff r-tableone r-testthat))
+    (home-page "https://bsaul.github.io/smd/")
+    (synopsis "Compute Standardized Mean Differences")
+    (description
+     "Computes standardized mean differences and confidence intervals for multiple
+data types based on Yang, D., & Dalton, J. E. (2012)
+<https://support.sas.com/resources/papers/proceedings12/335-2012.pdf>.")
+    (license expat)))
+
+(define-public r-geepack
+  (package
+    (name "r-geepack")
+    (version "1.3.12")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geepack" version))
+       (sha256
+        (base32 "0k856hw7zh553yrqp9g3s19hjviadh36drg2vvaddv2ma5ayj6z0"))))
+    (properties `((upstream-name . "geepack")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-broom r-magrittr r-mass))
+    (home-page "https://cran.r-project.org/package=geepack")
+    (synopsis "Generalized Estimating Equation Package")
+    (description
+     "Generalized estimating equations solver for parameters in mean, scale, and
+correlation structures, through mean link, scale link, and correlation link.
+Can also handle clustered categorical responses.  See e.g. Halekoh and
+HÃ¸jsgaard, (2005, <doi:10.18637/jss.v015.i02>), for details.")
+    (license gpl3+)))
+
+(define-public r-cardx
+  (package
+    (name "r-cardx")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cardx" version))
+       (sha256
+        (base32 "0hbr3rb2zhgz7f4h4r6hw1jqdnykhwdalivk62c4n8y0c2v04s2p"))))
+    (properties `((upstream-name . "cardx")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-cards
+                             r-cli
+                             r-dplyr
+                             r-glue
+                             r-lifecycle
+                             r-rlang
+                             r-tidyr))
+    (native-inputs (list r-broom
+                         r-effectsize
+                         r-emmeans
+                         r-geepack
+                         r-lme4
+                         r-mixed
+                         r-parameters
+                         r-smd
+                         r-survey
+                         r-survival
+                         r-testthat
+                         r-withr))
+    (home-page "https://insightsengineering.github.io/cardx/")
+    (synopsis "Extra Analysis Results Data Utilities")
+    (description
+     "Create extra Analysis Results Data (ARD) summary objects.  The package
+supplements the simple ARD functions from the cards package, exporting functions
+to put statistical results in the ARD format.  These objects are used and
+re-used to construct summary tables, visualizations, and written reports.")
+    (license asl2.0)))
+
