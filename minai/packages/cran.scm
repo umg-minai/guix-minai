@@ -606,7 +606,7 @@ HÃ¸jsgaard, (2005, <doi:10.18637/jss.v015.i02>), for details.")
                          r-emmeans
                          r-geepack
                          r-lme4
-                         r-mixed
+                         r-broom-mixed
                          r-parameters
                          r-smd
                          r-survey
@@ -622,3 +622,36 @@ to put statistical results in the ARD format.  These objects are used and
 re-used to construct summary tables, visualizations, and written reports.")
     (license asl2.0)))
 
+(define-public r-broom-mixed
+  (package
+    (name "r-broom-mixed")
+    (version "0.2.9.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "broom.mixed" version))
+       (sha256
+        (base32 "134qwdwhm0ih55n26hbyqb1hxj8d5k5jpc6gagpn9ny2vryzsszh"))))
+    (properties `((upstream-name . "broom.mixed")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-broom
+                             r-coda
+                             r-dplyr
+                             r-forcats
+                             r-furrr
+                             r-nlme
+                             r-purrr
+                             r-stringr
+                             r-tibble
+                             r-tidyr))
+    (native-inputs (list r-gamlss-data r-glmmtmb r-knitr r-rstan r-testthat))
+    (home-page "https://github.com/bbolker/broom.mixed")
+    (synopsis "Tidying Methods for Mixed Models")
+    (description
+     "Convert fitted objects from various R mixed-model packages into tidy data frames
+along the lines of the broom package.  The package provides three S3 generics
+for each model: @code{tidy()}, which summarizes a model's statistical findings
+such as coefficients of a regression; @code{augment()}, which adds columns to
+the original data such as predictions, residuals and cluster assignments; and
+@code{glance()}, which provides a one-row summary of model-level statistics.")
+    (license gpl3)))
