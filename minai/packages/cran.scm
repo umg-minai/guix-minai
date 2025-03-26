@@ -100,15 +100,16 @@ these CSS transformations when given HTML text and it does so by using the
 (define-public r-bigd
   (package
     (name "r-bigd")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bigD" version))
               (sha256
                (base32
-                "0pzzqqazn1nv2b613vzdyhxvr454lyqq8235jydia6r3k86fpadw"))))
+                "1807m3ma7h7k7m7c8g7qrjf77limvy6q4mkfkn4nrv1rgsnq7kbq"))))
     (properties `((upstream-name . "bigD")))
     (build-system r-build-system)
+    (native-inputs (list r-testthat))
     (home-page "https://github.com/rich-iannone/bigD")
     (synopsis "Flexibly Format Dates and Times to a Given Locale")
     (description
@@ -169,25 +170,41 @@ that you don't often have to worry about the fine details.")
 (define-public r-gtsummary
   (package
     (name "r-gtsummary")
-    (version "2.0.3")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gtsummary" version))
               (sha256
                (base32
-                "1ihbh5gm029n7g8041l7wrsd1wph7cl4hvx3bmd9669lv9w8476d"))))
+                "0d27x881s5c0ijp0brqmibmssl8bxdcz3saasg9l4n2a6sq2008s"))))
     (properties `((upstream-name . "gtsummary")))
     (build-system r-build-system)
     (propagated-inputs (list r-cards
                              r-cli
                              r-dplyr
-                             r-glue.1.8
+                             r-glue
                              r-gt
                              r-lifecycle
                              r-rlang
                              r-tidyr
                              r-vctrs))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-broom
+                         r-car
+                         r-cardx
+                         r-flextable
+                         r-geepack
+                         r-helpers
+                         r-knitr
+                         r-lme4
+                         r-mice
+                         r-nnet
+                         r-parsnip
+                         r-spelling
+                         r-survey
+                         r-survival
+                         r-testthat
+                         r-withr
+                         r-workflows))
     (home-page "https://github.com/ddsjoberg/gtsummary")
     (synopsis "Presentation-Ready Data Summary and Analytic Result Tables")
     (description
@@ -204,18 +221,20 @@ headers.")
 (define-public r-cards
   (package
     (name "r-cards")
-    (version "0.3.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cards" version))
        (sha256
-        (base32 "1rwa0xh5inyyk1j21d69nasjzyx6rrck9zc194j1xm77zj6z77v7"))))
+        (base32 "0jq044skp09sppvyyhpc38qswrcdh9sf3j3yp2lgdsziz4gfjvxf"))))
     (properties `((upstream-name . "cards")))
     (build-system r-build-system)
+    (native-inputs (list r-cardx r-testthat r-withr))
     (propagated-inputs (list r-cli
                              r-dplyr
                              r-glue
+                             r-lifecycle
                              r-rlang
                              r-tidyr
                              r-tidyselect))
