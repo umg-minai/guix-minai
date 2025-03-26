@@ -398,7 +398,7 @@ is provided.")
 (define-public r-dltr
     (package
       (name "r-dltr")
-      (version "0.0.3")
+      (version "0.0.4")
       (source
        (origin
          (method git-fetch)
@@ -407,7 +407,7 @@ is provided.")
                (commit version)))
          (file-name (git-file-name name version))
          (sha256
-          (base32 "1znfxi6aqjcm8mmys9ykf3ssp4jrpc27si0d6nc7w9wl4g6ik1mz"))))
+          (base32 "1a9kff0lyv9jkpmw2vxd2n8ncxf7dzs3jz4cg8rr522caxqmmmc7"))))
       (properties `((upstream-name . "dltr")))
       (build-system r-build-system)
       (native-inputs (list r-testthat))
