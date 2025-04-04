@@ -100,13 +100,13 @@ these CSS transformations when given HTML text and it does so by using the
 (define-public r-bigd
   (package
     (name "r-bigd")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bigD" version))
               (sha256
                (base32
-                "1807m3ma7h7k7m7c8g7qrjf77limvy6q4mkfkn4nrv1rgsnq7kbq"))))
+                "1lc8c3g22sb3mkmr0vjw6x92cs04gdfsny1iii0v3xj9337v1cc6"))))
     (properties `((upstream-name . "bigD")))
     (build-system r-build-system)
     (native-inputs (list r-testthat))
