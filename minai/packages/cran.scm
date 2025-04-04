@@ -138,6 +138,7 @@ varying specificity.")
                 "0njzpj57afvbi7jsbpb0j1mgm1nz01bd25668gsmvpd7lajm7ig0"))))
     (properties `((upstream-name . "gt")))
     (build-system r-build-system)
+    (native-inputs (list r-testthat))
     (propagated-inputs (list r-base64enc
                              r-bigd
                              r-bitops
