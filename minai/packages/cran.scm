@@ -384,7 +384,7 @@ file as well.  See also Van der Loo and De Jonge (2018)
       (properties `((upstream-name . "ameld")))
       (build-system r-build-system)
       (propagated-inputs (list r-glmnet r-survival))
-      (native-inputs (list r-knitr))
+      (native-inputs (list r-knitr r-testthat))
       (home-page "https://github.com/ampel-leipzig/ameld")
       (synopsis
        "Data and Model of End-Stage Liver Disease used in the AMPEL Project")
