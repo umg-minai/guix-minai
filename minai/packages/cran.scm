@@ -147,6 +147,7 @@ varying specificity.")
                              r-dplyr
                              r-fs
                              r-glue
+                             r-gtable
                              r-htmltools
                              r-htmlwidgets
                              r-juicyjuice
