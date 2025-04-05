@@ -183,6 +183,9 @@ that you don't often have to worry about the fine details.")
                 "0d27x881s5c0ijp0brqmibmssl8bxdcz3saasg9l4n2a6sq2008s"))))
     (properties `((upstream-name . "gtsummary")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-cards
                              r-cli
                              r-dplyr
@@ -192,17 +195,30 @@ that you don't often have to worry about the fine details.")
                              r-rlang
                              r-tidyr
                              r-vctrs))
-    (native-inputs (list r-broom
+    (native-inputs (list r-aod
+                         r-broom
+                         r-broom-helpers
+                         r-broom-mixed
                          r-car
                          r-cardx
+                         r-cmprsk
+                         r-effectsize
+                         r-emmeans
                          r-flextable
                          r-geepack
-                         r-broom-helpers
+                         r-ggstats
+                         r-insight
+                         r-kableextra
                          r-knitr
                          r-lme4
                          r-mice
                          r-nnet
+                         r-officer
+                         r-openxlsx
+                         r-parameters
                          r-parsnip
+                         r-rmarkdown
+                         r-smd
                          r-spelling
                          r-survey
                          r-survival
@@ -660,3 +676,82 @@ such as coefficients of a regression; @code{augment()}, which adds columns to
 the original data such as predictions, residuals and cluster assignments; and
 @code{glance()}, which provides a one-row summary of model-level statistics.")
     (license gpl3)))
+
+(define-public r-ggsurvfit
+  (package
+    (name "r-ggsurvfit")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggsurvfit" version))
+       (sha256
+        (base32 "0c3qv9gii3ndqip3nxs08bx7lvh6sm46mxz8nyi627zbgqmhwrr5"))))
+    (properties `((upstream-name . "ggsurvfit")))
+    (build-system r-build-system)
+    ;; ggsurvfit and cardx both suggest each other and introduce a cyclic
+    ;; dependency; unfortunately tests fail without these suggested packages
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-broom
+                             r-cli
+                             r-dplyr
+                             r-ggplot2
+                             r-glue
+                             r-gtable
+                             r-patchwork
+                             r-rlang
+                             r-survival
+                             r-tidyr))
+    (native-inputs (list r-knitr
+                         r-scales
+                         r-spelling
+                         r-testthat
+                         r-tidycmprsk
+                         r-vdiffr
+                         r-withr))
+    (home-page "https://github.com/pharmaverse/ggsurvfit")
+    (synopsis "Flexible Time-to-Event Figures")
+    (description
+     "Ease the creation of time-to-event (i.e.  survival) endpoint figures.  The
+modular functions create figures ready for publication.  Each of the functions
+that add to or modify the figure are written as proper ggplot2 geoms or stat
+methods, allowing the functions from this package to be combined with any
+function or customization from ggplot2 and other ggplot2 extension packages.")
+    (license expat)))
+
+(define-public r-tidycmprsk
+  (package
+    (name "r-tidycmprsk")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidycmprsk" version))
+       (sha256
+        (base32 "1w88zz5wscb25j59hx1bzlmf13mh8wqngkffnhmp6vwn1a53i8lx"))))
+    (properties `((upstream-name . "tidycmprsk")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-broom
+                             r-cli
+                             r-cmprsk
+                             r-dplyr
+                             r-ggplot2
+                             r-gtsummary
+                             r-hardhat
+                             r-purrr
+                             r-rlang
+                             r-stringr
+                             r-survival
+                             r-tibble
+                             r-tidyr))
+    (native-inputs (list r-spelling r-testthat))
+    (home-page "https://mskcc-epi-bio.github.io/tidycmprsk/")
+    (synopsis "Competing Risks Estimation")
+    (description
+     "This package provides an intuitive interface for working with the competing risk
+endpoints.  The package wraps the cmprsk package, and exports functions for
+univariate cumulative incidence estimates and competing risk regression.
+Methods follow those introduced in Fine and Gray (1999) <doi:10.1002/sim.7501>.")
+    (license agpl3+)))
