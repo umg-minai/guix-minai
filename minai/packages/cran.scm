@@ -615,6 +615,11 @@ HÃ¸jsgaard, (2005, <doi:10.18637/jss.v015.i02>), for details.")
         (base32 "0hbr3rb2zhgz7f4h4r6hw1jqdnykhwdalivk62c4n8y0c2v04s2p"))))
     (properties `((upstream-name . "cardx")))
     (build-system r-build-system)
+    ;; ggsurvfit and cardx both suggest each other and introduce a cyclic
+    ;; dependency; unfortunately tests fail without these suggested packages
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-cards
                              r-cli
                              r-dplyr
@@ -622,12 +627,15 @@ HÃ¸jsgaard, (2005, <doi:10.18637/jss.v015.i02>), for details.")
                              r-lifecycle
                              r-rlang
                              r-tidyr))
-    (native-inputs (list r-broom
+    (native-inputs (list r-aod
+                         r-broom
+                         r-broom-helpers
+                         r-broom-mixed
+                         r-car
                          r-effectsize
                          r-emmeans
                          r-geepack
                          r-lme4
-                         r-broom-mixed
                          r-parameters
                          r-smd
                          r-survey
