@@ -203,7 +203,7 @@ that you don't often have to worry about the fine details.")
                          r-knitr
                          r-lme4
                          r-mice
-                         r-mixed
+                         r-broom-mixed
                          r-nnet
                          r-parsnip
                          r-spelling
