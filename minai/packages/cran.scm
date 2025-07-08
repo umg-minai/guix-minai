@@ -590,52 +590,6 @@ Can also handle clustered categorical responses.  See e.g. Halekoh and
 HÃ¸jsgaard, (2005, <doi:10.18637/jss.v015.i02>), for details.")
     (license gpl3+)))
 
-(define-public r-cardx
-  (package
-    (name "r-cardx")
-    (version "0.2.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cardx" version))
-       (sha256
-        (base32 "179wzyzp89xfmm95nvspazpkprn4cqi6dh3bw1j12ljxnv44npan"))))
-    (properties `((upstream-name . "cardx")))
-    (build-system r-build-system)
-    ;; ggsurvfit and cardx both suggest each other and introduce a cyclic
-    ;; dependency; unfortunately tests fail without these suggested packages
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-cards
-                             r-cli
-                             r-dplyr
-                             r-glue
-                             r-lifecycle
-                             r-rlang
-                             r-tidyr))
-    (native-inputs (list r-broom
-                         r-effectsize
-                         r-emmeans
-                         r-geepack
-                         r-ggsurvfit
-                         r-lme4
-                         r-mixed
-                         r-parameters
-                         r-smd
-                         r-survey
-                         r-survival
-                         r-testthat
-                         r-withr))
-    (home-page "https://insightsengineering.github.io/cardx/")
-    (synopsis "Extra Analysis Results Data Utilities")
-    (description
-     "Create extra Analysis Results Data (ARD) summary objects.  The package
-supplements the simple ARD functions from the cards package, exporting functions
-to put statistical results in the ARD format.  These objects are used and
-re-used to construct summary tables, visualizations, and written reports.")
-    (license asl2.0)))
-
 (define-public r-broom-mixed
   (package
     (name "r-broom-mixed")
