@@ -285,7 +285,7 @@ objects.")
                              r-tidyr
                              r-viridislite
                              r-visnetwork))
-    (native-inputs (list esbuild))
+    (native-inputs (list esbuild r-testthat))
     (home-page "https://github.com/rich-iannone/DiagrammeR")
     (synopsis "Graph/Network Visualization")
     (description
