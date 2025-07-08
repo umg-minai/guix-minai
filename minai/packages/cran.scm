@@ -61,7 +61,7 @@ functions, an embedded Babel transpiler', and examples.")
                 "1wkamzyyl3k3772n5g4rjklkkhdb07jiax064r9alnnq5nzfdaml"))))
     (properties `((upstream-name . "reactable")))
     (build-system r-build-system)
-    (native-inputs (list r-testthat))
+    (native-inputs (list r-testthat r-shiny r-dplyr r-crosstalk))
     (propagated-inputs (list r-digest r-htmltools r-htmlwidgets r-jsonlite
                              r-reactr))
     (home-page "https://glin.github.io/reactable/")
