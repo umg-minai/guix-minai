@@ -195,15 +195,15 @@ that you don't often have to worry about the fine details.")
                              r-tidyr
                              r-vctrs))
     (native-inputs (list r-broom
+                         r-broom-helpers
+                         r-broom-mixed
                          r-car
                          r-cardx
                          r-flextable
                          r-geepack
-                         r-helpers
                          r-knitr
                          r-lme4
                          r-mice
-                         r-broom-mixed
                          r-nnet
                          r-parsnip
                          r-spelling
