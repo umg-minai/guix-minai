@@ -129,16 +129,16 @@ varying specificity.")
 (define-public r-gt
   (package
     (name "r-gt")
-    (version "0.11.1")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gt" version))
               (sha256
                (base32
-                "0njzpj57afvbi7jsbpb0j1mgm1nz01bd25668gsmvpd7lajm7ig0"))))
+                "06sq5gscf16nkygnfmchg0kjbrd07qyybyg7mqzz0m3a0g81pskf"))))
     (properties `((upstream-name . "gt")))
     (build-system r-build-system)
-    (native-inputs (list r-testthat))
+    (native-inputs (list r-rvest r-testthat r-tidyr))
     (propagated-inputs (list r-base64enc
                              r-bigd
                              r-bitops
@@ -147,7 +147,6 @@ varying specificity.")
                              r-dplyr
                              r-fs
                              r-glue
-                             r-gtable
                              r-htmltools
                              r-htmlwidgets
                              r-juicyjuice
@@ -174,13 +173,13 @@ that you don't often have to worry about the fine details.")
 (define-public r-gtsummary
   (package
     (name "r-gtsummary")
-    (version "2.1.0")
+    (version "2.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gtsummary" version))
               (sha256
                (base32
-                "0d27x881s5c0ijp0brqmibmssl8bxdcz3saasg9l4n2a6sq2008s"))))
+                "1nkx78n7xf8hcd9c3adbdplj39mv819bd83n8ii6mq0j9vp5bpls"))))
     (properties `((upstream-name . "gtsummary")))
     (build-system r-build-system)
     (arguments
@@ -195,30 +194,18 @@ that you don't often have to worry about the fine details.")
                              r-rlang
                              r-tidyr
                              r-vctrs))
-    (native-inputs (list r-aod
-                         r-broom
-                         r-broom-helpers
-                         r-broom-mixed
+    (native-inputs (list r-broom
                          r-car
                          r-cardx
-                         r-cmprsk
-                         r-effectsize
-                         r-emmeans
                          r-flextable
                          r-geepack
-                         r-ggstats
-                         r-insight
-                         r-kableextra
+                         r-helpers
                          r-knitr
                          r-lme4
                          r-mice
+                         r-mixed
                          r-nnet
-                         r-officer
-                         r-openxlsx
-                         r-parameters
                          r-parsnip
-                         r-rmarkdown
-                         r-smd
                          r-spelling
                          r-survey
                          r-survival
@@ -241,13 +228,13 @@ headers.")
 (define-public r-cards
   (package
     (name "r-cards")
-    (version "0.5.1")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cards" version))
        (sha256
-        (base32 "0jq044skp09sppvyyhpc38qswrcdh9sf3j3yp2lgdsziz4gfjvxf"))))
+        (base32 "1ndzhsk9c82hr8c3w9b2a7lgfns24p2hk2nqkmwpymb8a7yx9fbc"))))
     (properties `((upstream-name . "cards")))
     (build-system r-build-system)
     (native-inputs (list r-testthat r-withr))
@@ -398,7 +385,7 @@ file as well.  See also Van der Loo and De Jonge (2018)
                (commit commit)))
          (file-name (git-file-name name version))
          (sha256
-          (base32 "0rpn8w9gg1ky6ir19hprsvxl2c9dl42582zpbh963jbvfk80pyfq"))))
+          (base32 "1bh4fp0k9qqml33g664dx22xagdfdb2bcvfvajwyb2s3fs1cgrl0"))))
       (properties `((upstream-name . "ameld")))
       (build-system r-build-system)
       (propagated-inputs (list r-glmnet r-survival))
@@ -606,13 +593,13 @@ HÃ¸jsgaard, (2005, <doi:10.18637/jss.v015.i02>), for details.")
 (define-public r-cardx
   (package
     (name "r-cardx")
-    (version "0.2.3")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cardx" version))
        (sha256
-        (base32 "0hbr3rb2zhgz7f4h4r6hw1jqdnykhwdalivk62c4n8y0c2v04s2p"))))
+        (base32 "179wzyzp89xfmm95nvspazpkprn4cqi6dh3bw1j12ljxnv44npan"))))
     (properties `((upstream-name . "cardx")))
     (build-system r-build-system)
     ;; ggsurvfit and cardx both suggest each other and introduce a cyclic
@@ -627,15 +614,13 @@ HÃ¸jsgaard, (2005, <doi:10.18637/jss.v015.i02>), for details.")
                              r-lifecycle
                              r-rlang
                              r-tidyr))
-    (native-inputs (list r-aod
-                         r-broom
-                         r-broom-helpers
-                         r-broom-mixed
-                         r-car
+    (native-inputs (list r-broom
                          r-effectsize
                          r-emmeans
                          r-geepack
+                         r-ggsurvfit
                          r-lme4
+                         r-mixed
                          r-parameters
                          r-smd
                          r-survey
