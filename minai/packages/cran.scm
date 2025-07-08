@@ -111,7 +111,7 @@ these CSS transformations when given HTML text and it does so by using the
                 "1lc8c3g22sb3mkmr0vjw6x92cs04gdfsny1iii0v3xj9337v1cc6"))))
     (properties `((upstream-name . "bigD")))
     (build-system r-build-system)
-    (native-inputs (list r-testthat))
+    (native-inputs (list r-testthat r-vctrs))
     (home-page "https://github.com/rich-iannone/bigD")
     (synopsis "Flexibly Format Dates and Times to a Given Locale")
     (description
