@@ -267,6 +267,9 @@ objects.")
                 "1py4yii88lsyj8y71d2v0rb9lk5hvhfh0q8n2q4288wqw7bf6wz8"))))
     (properties `((upstream-name . "DiagrammeR")))
     (build-system r-build-system)
+    (arguments
+      (list
+        #:tests? #f)) ;; failing due to wrong timezone
     (propagated-inputs (list r-cli
                              r-dplyr
                              r-glue
